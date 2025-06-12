@@ -6,6 +6,10 @@
   <title>Carrossel do Amor 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<!-- Botões de scroll com corações -->
+<button id="btnDescer" class="botao-scroll" onclick="scrollParaBaixo()">💗</button>
+<button id="btnSubir" class="botao-scroll" onclick="scrollParaCima()">💖</button>
+
 <body>
   
 
@@ -36,7 +40,7 @@
             <img src="/nossoday/imagens/foto (8).jpg" alt="Foto 3">
             <img src="/nossoday/imagens/foto (4).jpg" alt="Foto 4">
             <img src="/nossoday/imagens/foto (5).jpg" alt="Foto 5">
-            <img src="/nossoday/imagens/foto (1).png" alt="Foto 6">
+            <img src="/nossoday/imagens/foto (6).jpg" alt="Foto 6">
             <img src="/nossoday/imagens/foto (7).jpg" alt="Foto 7">
             <img src="/nossoday/imagens/foto (3).jpg" alt="Foto 8">
             
@@ -46,7 +50,7 @@
             <img src="/nossoday/imagens/foto (8).jpg" alt="Foto 3 duplicada">
             <img src="/nossoday/imagens/foto (4).jpg" alt="Foto 4 duplicada">
             <img src="/nossoday/imagens/foto (5).jpg" alt="Foto 5 duplicada">
-            <img src="/nossoday/imagens/foto (1).png" alt="Foto 6 duplicada">
+            <img src="/nossoday/imagens/foto (6).jpg" alt="Foto 6 duplicada">
             <img src="/nossoday/imagens/foto (7).jpg" alt="Foto 7 duplicada">
             <img src="/nossoday/imagens/foto (3).jpg" alt="Foto 8 duplicada">
             </div>
@@ -79,27 +83,67 @@
         <div class="coracao"></div>
         </div>
         <script>
-            function mostrarPresente() {
-              // Esconde a tela inicial
-              document.getElementById('telaInicial').style.display = 'none';
+        function mostrarPresente() {
+  // Esconde a tela inicial
+  document.getElementById('telaInicial').style.display = 'none';
 
-              // Mostra o coração
-              const coracao = document.getElementById('coracaoGigante');
-              coracao.style.display = 'block';
+  // Mostra o coração gigante
+  const coracao = document.getElementById('coracaoGigante');
+  coracao.style.display = 'block';
 
-              // TOCAR MÚSICA APÓS O CLIQUE
-              const audio = new Audio("Matheus & Kauan - Que Sorte A Nossa.mp3");
-              audio.loop = true;
-              audio.play();
+  // Música
+  const audio = new Audio("Matheus & Kauan - Que Sorte A Nossa.mp3");
+  audio.loop = true;
+  audio.play();
 
-              // Após a animação do coração (~1.5s), mostra o presente
-              setTimeout(() => {
-                coracao.style.display = 'none';
-                document.getElementById('presenteContainer').style.display = 'block';
-                window.scrollTo(0, 0); // volta pro topo
-              }, 1600);
-            }
+  // Após a animação do coração
+  setTimeout(() => {
+    coracao.style.display = 'none';
+    document.getElementById('presenteContainer').style.display = 'block';
+    window.scrollTo(0, 0);
+
+    // Ativa monitoramento de rolagem após aparecer o conteúdo
+    ativarScrollBotoes();
+  }, 1600);
+}
+
+
+function ativarScrollBotoes() {
+  const btnDescer = document.getElementById('btnDescer');
+  const btnSubir = document.getElementById('btnSubir');
+
+  // Escuta rolagem
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const fullHeight = document.body.scrollHeight;
+
+    if (scrollTop + windowHeight >= fullHeight - 50) {
+      // Final da página
+      btnDescer.style.display = 'none';
+      btnSubir.style.display = 'block';
+    } else if (scrollTop <= 50) {
+      // Topo
+      btnDescer.style.display = 'block';
+      btnSubir.style.display = 'none';
+    } else {
+      btnDescer.style.display = 'none';
+      btnSubir.style.display = 'none';
+    }
+  });
+}
+
+function scrollParaBaixo() {
+  window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+}
+
+function scrollParaCima() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+
         </script>
+       
 
 
 </body>
