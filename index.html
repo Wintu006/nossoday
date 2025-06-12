@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrossel do Amor 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+
+        <div class="tela-inicial" id="telaInicial">
+          
+        <button onclick="mostrarPresente()" class="botao-inicio">Clique para ver 💝</button>
+        </div>
+
+        <!-- ANIMAÇÃO DE CORAÇÃO -->
+        <div class="coracao-gigante" id="coracaoGigante">❤️</div>
+
+          
+        <div class="presente-container" id="presenteContainer" style="display: none;">  
+          
+          <audio autoplay loop>
+  <source src="Matheus & Kauan - Que Sorte A Nossa.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio.
+</audio>
+          <!--<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/44pllb9f5QwcrD2kKc0gS0?utm_source=generator" width="100%" height="252" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        -->
+
+          <img src="/nossoday/imagens/logo.png" id="logo">
+
+        <div class="carrossel-container">
+            <div class="carrossel">
+            <img src="/nossoday/imagens/foto (1).jpg" alt="Foto 1">
+            <img src="/nossoday/imagens/foto (2).jpg" alt="Foto 2">
+            <img src="/nossoday/imagens/foto (8).jpg" alt="Foto 3">
+            <img src="/nossoday/imagens/foto (4).jpg" alt="Foto 4">
+            <img src="/nossoday/imagens/foto (5).jpg" alt="Foto 5">
+            <img src="/nossoday/imagens/foto (1).png" alt="Foto 6">
+            <img src="/nossoday/imagens/foto (7).jpg" alt="Foto 7">
+            <img src="/nossoday/imagens/foto (3).jpg" alt="Foto 8">
+            
+            
+            <img src="/nossoday/imagens/foto (1).jpg" alt="Foto 1 duplicada">
+            <img src="/nossoday/imagens/foto (2).jpg" alt="Foto 2 duplicada">
+            <img src="/nossoday/imagens/foto (8).jpg" alt="Foto 3 duplicada">
+            <img src="/nossoday/imagens/foto (4).jpg" alt="Foto 4 duplicada">
+            <img src="/nossoday/imagens/foto (5).jpg" alt="Foto 5 duplicada">
+            <img src="/nossoday/imagens/foto (1).png" alt="Foto 6 duplicada">
+            <img src="/nossoday/imagens/foto (7).jpg" alt="Foto 7 duplicada">
+            <img src="/nossoday/imagens/foto (3).jpg" alt="Foto 8 duplicada">
+            </div>
+        </div>
+        <!-- Carrossel permanece o mesmo -->
+
+        <!-- MENSAGEM ABAIXO DO CARROSSEL -->
+                <div class="mensagem-de-amor">
+                <h2>Feliz dia dos Namorados... 💖</h2>
+                <p>
+                    Já se vão quase 6 anos ao seu lado...<br>
+                    E a cada dia, eu tenho mais certeza de que quero viver tudo contigo.<br><br>
+                    Passamos por tantas fases, tantos momentos — e em cada um deles, você esteve comigo, com amor, com paciência, com aquele jeitinho só seu.<br><br>
+                    Hoje, já estamos quase 2 anos noivos... E só de pensar que um dia vou te chamar de esposa, meu coração já sorri.<br><br>
+                    Esse presente é só um pedacinho do quanto eu te amo.<br>
+                    Obrigado por ser minha melhor escolha todos os dias.<br><br>
+                    <strong>Te amo infinito ❤️</strong>
+                </p>
+                </div>
+        </div>          
+
+        <!-- Corações flutuantes -->
+        <div class="coracoes-container">
+        <!-- Vários corações com classe .coracao -->
+        <div class="coracao"></div>
+        <div class="coracao"></div>
+        <div class="coracao"></div>
+        <div class="coracao"></div>
+        <div class="coracao"></div>
+        <div class="coracao"></div>
+        </div>
+        <script>
+            function mostrarPresente() {
+              // Esconde a tela inicial
+              document.getElementById('telaInicial').style.display = 'none';
+
+              // Mostra o coração
+              const coracao = document.getElementById('coracaoGigante');
+              coracao.style.display = 'block';
+
+              // TOCAR MÚSICA APÓS O CLIQUE
+              const audio = new Audio("Matheus & Kauan - Que Sorte A Nossa.mp3");
+              audio.loop = true;
+              audio.play();
+
+              // Após a animação do coração (~1.5s), mostra o presente
+              setTimeout(() => {
+                coracao.style.display = 'none';
+                document.getElementById('presenteContainer').style.display = 'block';
+                window.scrollTo(0, 0); // volta pro topo
+              }, 1600);
+            }
+        </script>
+
+
+</body>
+</html>
