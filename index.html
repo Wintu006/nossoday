@@ -23,7 +23,7 @@
 
           
         <div class="presente-container" id="presenteContainer" style="display: none;">  
-          
+          <img src="/nossoday/imagens/logo.png" id="logo">
           <audio autoplay loop>
   <source src="Matheus & Kauan - Que Sorte A Nossa.mp3" type="audio/mpeg">
   Seu navegador não suporta áudio.
@@ -31,7 +31,7 @@
           <!--<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/44pllb9f5QwcrD2kKc0gS0?utm_source=generator" width="100%" height="252" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         -->
 
-          <img src="/nossoday/imagens/logo.png" id="logo">
+          
 
         <div class="carrossel-container">
             <div class="carrossel">
@@ -83,11 +83,9 @@
         <div class="coracao"></div>
         </div>
         <script>
-        function mostrarPresente() {
-  // Esconde a tela inicial
+function mostrarPresente() {
   document.getElementById('telaInicial').style.display = 'none';
 
-  // Mostra o coração gigante
   const coracao = document.getElementById('coracaoGigante');
   coracao.style.display = 'block';
 
@@ -96,34 +94,28 @@
   audio.loop = true;
   audio.play();
 
-  // Após a animação do coração
+  // Após animação
   setTimeout(() => {
     coracao.style.display = 'none';
     document.getElementById('presenteContainer').style.display = 'block';
-    window.scrollTo(0, 0);
-
-    // Ativa monitoramento de rolagem após aparecer o conteúdo
+    document.querySelector('.coracoes-container').style.display = 'block';
     ativarScrollBotoes();
   }, 1600);
 }
-
 
 function ativarScrollBotoes() {
   const btnDescer = document.getElementById('btnDescer');
   const btnSubir = document.getElementById('btnSubir');
 
-  // Escuta rolagem
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const windowHeight = window.innerHeight;
     const fullHeight = document.body.scrollHeight;
 
-    if (scrollTop + windowHeight >= fullHeight - 50) {
-      // Final da página
+    if (scrollTop + windowHeight >= fullHeight - 100) {
       btnDescer.style.display = 'none';
       btnSubir.style.display = 'block';
     } else if (scrollTop <= 50) {
-      // Topo
       btnDescer.style.display = 'block';
       btnSubir.style.display = 'none';
     } else {
@@ -140,11 +132,13 @@ function scrollParaBaixo() {
 function scrollParaCima() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+</script>
 
-
-        </script>
        
 
+<!-- Botões de scroll com ícones de coração -->
+<button id="btnDescer" class="botao-scroll" onclick="scrollParaBaixo()">💗</button>
+<button id="btnSubir" class="botao-scroll" onclick="scrollParaCima()">💖</button>
 
 </body>
 </html>

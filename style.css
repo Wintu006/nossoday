@@ -242,3 +242,153 @@ body {
   transition: opacity 0.3s ease;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff0f5;
+  overflow-x: hidden;
+}
+
+.tela-inicial {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffe4e1;
+  padding: 20px;
+  text-align: center;
+}
+
+.botao-inicio {
+  padding: 16px 24px;
+  font-size: 18px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.coracao-gigante {
+  font-size: 80px;
+  text-align: center;
+  display: none;
+  margin-top: 20vh;
+  animation: explode 1.5s ease-out;
+}
+
+@keyframes explode {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.carrossel-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.carrossel {
+  display: flex;
+  animation: rolar 40s linear infinite;
+}
+
+.carrossel img {
+  width: auto;
+  height: 75vh;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+@keyframes rolar {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.mensagem-de-amor {
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  max-width: 90%;
+  margin: 0 auto;
+  background-color: #ffffff44;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.mensagem-de-amor h2 {
+  color: #d6336c;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.coracoes-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+  display: none;
+}
+
+.coracao {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  animation: flutuar 6s infinite ease-in;
+  color: pink;
+  font-size: 24px;
+}
+
+@keyframes flutuar {
+  0% {
+    bottom: 0;
+    opacity: 0;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(30px);
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+/* Botões de scroll */
+.botao-scroll {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  font-size: 24px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
