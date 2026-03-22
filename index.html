@@ -2,150 +2,143 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Controle de Insumos</title>
-  <style>
-    body { font-family: Arial; background:#f4f6f9; padding:20px; }
-    h1 { text-align:center; }
-    .container { max-width:900px; margin:auto; background:#fff; padding:20px; border-radius:10px; }
-    label { font-weight:bold; display:block; margin-top:10px; }
-    input { width:100%; padding:8px; margin-top:5px; }
-    .postos label { display:block; font-weight:normal; }
-    button { margin-top:15px; padding:10px; background:#007bff; color:#fff; border:none; border-radius:5px; }
-    table { width:100%; margin-top:20px; border-collapse:collapse; }
-    th,td { border:1px solid #ddd; padding:8px; text-align:center; }
-    th { background:#007bff; color:#fff; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrossel do Amor 💖</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+<!-- Botões de scroll com corações -->
+<button id="btnDescer" class="botao-scroll" onclick="scrollParaBaixo()">💗</button>
+<button id="btnSubir" class="botao-scroll" onclick="scrollParaCima()">💖</button>
+
 <body>
+  
 
-<div class="container">
-  <h1>Controle envio de Insumos</h1>
+        <div class="tela-inicial" id="telaInicial">
+          
+        <button onclick="mostrarPresente()" class="botao-inicio">Clique para ver 💝</button>
+        </div>
 
-  <label>Insumo</label>
-  <input type="text" id="insumo">
+        <!-- ANIMAÇÃO DE CORAÇÃO -->
+        <div class="coracao-gigante" id="coracaoGigante">❤️</div>
 
-  <label>Quantidade</label>
-  <input type="number" id="quantidade">
+          
+        <div class="presente-container" id="presenteContainer" style="display: none;">  
+          <img src="/nossoday/imagens/logo.png" id="logo">
+          <audio autoplay loop>
+  <source src="Matheus & Kauan - Que Sorte A Nossa.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio.
+</audio>
+          <!--<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/44pllb9f5QwcrD2kKc0gS0?utm_source=generator" width="100%" height="252" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        -->
 
-  <label>Postos</label>
-  <label>Postos</label>
-  <details style="margin-top:5px;">
-    <summary style="cursor:pointer; padding:8px; border:1px solid #ccc; border-radius:5px;">Selecionar postos</summary>
-    <div id="postos" class="postos" style="margin-top:10px; max-height:200px; overflow:auto;">
-      <label><input type="checkbox" value="Coité"> Coité</label>
-      <label><input type="checkbox" value="Salgadalia"> Salgadalia</label>
-      <label><input type="checkbox" value="Riachão"> Riachão</label>
-      <label><input type="checkbox" value="Nova Fatima"> Nova Fatima</label>
-      <label><input type="checkbox" value="Capela"> Capela</label>
-      <label><input type="checkbox" value="Cliamo"> Cliamo</label>
-      <label><input type="checkbox" value="Retirolandia"> Retirolandia</label>
-      <label><input type="checkbox" value="Valente"> Valente</label>
-      <label><input type="checkbox" value="CIS S. Luz"> CIS S. Luz</label>
-      <label><input type="checkbox" value="M. Isabel S. Luz"> M. Isabel S. Luz</label>
-      <label><input type="checkbox" value="Queimadas"> Queimadas</label>
-      <label><input type="checkbox" value="Nossa Clínica"> Nossa Clínica</label>
-      <label><input type="checkbox" value="Fisiomedic"> Fisiomedic</label>
-      <label><input type="checkbox" value="Monte Santo"> Monte Santo</label>
-    </div>
-  </details>
+          
 
-  <label>Data</label>
-  <input type="date" id="data">
+        <div class="carrossel-container">
+            <div class="carrossel">
+            <img src="/nossoday/imagens/foto (1).jpg" alt="Foto 1">
+            <img src="/nossoday/imagens/foto (2).jpg" alt="Foto 2">
+            <img src="/nossoday/imagens/foto (8).jpg" alt="Foto 3">
+            <img src="/nossoday/imagens/foto (4).jpg" alt="Foto 4">
+            <img src="/nossoday/imagens/foto (5).jpg" alt="Foto 5">
+            <img src="/nossoday/imagens/foto (6).jpg" alt="Foto 6">
+            <img src="/nossoday/imagens/foto (7).jpg" alt="Foto 7">
+            <img src="/nossoday/imagens/foto (3).jpg" alt="Foto 8">
+            
+            
+            <img src="/nossoday/imagens/foto (1).jpg" alt="Foto 1 duplicada">
+            <img src="/nossoday/imagens/foto (2).jpg" alt="Foto 2 duplicada">
+            <img src="/nossoday/imagens/foto (8).jpg" alt="Foto 3 duplicada">
+            <img src="/nossoday/imagens/foto (4).jpg" alt="Foto 4 duplicada">
+            <img src="/nossoday/imagens/foto (5).jpg" alt="Foto 5 duplicada">
+            <img src="/nossoday/imagens/foto (6).jpg" alt="Foto 6 duplicada">
+            <img src="/nossoday/imagens/foto (7).jpg" alt="Foto 7 duplicada">
+            <img src="/nossoday/imagens/foto (3).jpg" alt="Foto 8 duplicada">
+            </div>
+        </div>
+        <!-- Carrossel permanece o mesmo -->
 
-  <button onclick="adicionar()">Salvar</button>
+        <!-- MENSAGEM ABAIXO DO CARROSSEL -->
+                <div class="mensagem-de-amor">
+                <h2>Feliz dia dos Namorados... 💖</h2>
+                <p>
+                    Já se vão quase 6 anos ao seu lado...<br>
+                    E a cada dia, eu tenho mais certeza de que quero viver tudo contigo.<br><br>
+                    Passamos por tantas fases, tantos momentos — e em cada um deles, você esteve comigo, com amor, com paciência, com aquele jeitinho só seu.<br><br>
+                    Hoje, já estamos quase 2 anos noivos... E só de pensar que um dia vou te chamar de esposa, meu coração já sorri.<br><br>
+                    Esse presente é só um pedacinho do quanto eu te amo.<br>
+                    Obrigado por ser minha melhor escolha todos os dias.<br><br>
+                    <strong>Te amo infinito ❤️</strong>
+                </p>
+                </div>
+        </div>          
 
-  <table>
-    <thead>
-      <tr>
-        <th>Insumo</th>
-        <th>Quantidade</th>
-        <th>Posto</th>
-        <th>Data</th>
-      </tr>
-    </thead>
-    <tbody id="tabela"></tbody>
-  </table>
-</div>
+        <!-- Corações flutuantes -->
+        <div class="coracoes-container">
+        <!-- Vários corações com classe .coracao -->
+        <div class="coracao"></div>
+        <div class="coracao"></div>
+        <div class="coracao"></div>
+        <div class="coracao"></div>
+        <div class="coracao"></div>
+        <div class="coracao"></div>
+        </div>
+        <script>
+function mostrarPresente() {
+  document.getElementById('telaInicial').style.display = 'none';
 
-<script>
-let dados = [];
+  const coracao = document.getElementById('coracaoGigante');
+  coracao.style.display = 'block';
 
-function renderizar() {
-  const tbody = document.getElementById('tabela');
-  tbody.innerHTML = '';
+  // Música
+  const audio = new Audio("Matheus & Kauan - Que Sorte A Nossa.mp3");
+  audio.loop = true;
+  audio.play();
 
-  dados.forEach(d => {
-    tbody.innerHTML += `
-      <tr>
-        <td>${d.insumo}</td>
-        <td>${d.quantidade}</td>
-        <td>${d.posto}</td>
-        <td>${d.data}</td>
-      </tr>
-    `;
+  // Após animação
+  setTimeout(() => {
+    coracao.style.display = 'none';
+    document.getElementById('presenteContainer').style.display = 'block';
+    document.querySelector('.coracoes-container').style.display = 'block';
+    ativarScrollBotoes();
+  }, 1600);
+}
+
+function ativarScrollBotoes() {
+  const btnDescer = document.getElementById('btnDescer');
+  const btnSubir = document.getElementById('btnSubir');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const fullHeight = document.body.scrollHeight;
+
+    if (scrollTop + windowHeight >= fullHeight - 100) {
+      btnDescer.style.display = 'none';
+      btnSubir.style.display = 'block';
+    } else if (scrollTop <= 50) {
+      btnDescer.style.display = 'block';
+      btnSubir.style.display = 'none';
+    } else {
+      btnDescer.style.display = 'none';
+      btnSubir.style.display = 'none';
+    }
   });
 }
 
-async function carregarDados() {
-  const url = "https://sheetdb.io/api/v1/vinx1o8k4zxoi";
-
-  try {
-    const res = await fetch(url);
-    const json = await res.json();
-
-    dados = json;
-    renderizar();
-
-  } catch (erro) {
-    console.error('Erro ao carregar dados:', erro);
-  }
+function scrollParaBaixo() {
+  window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
 }
 
-async function adicionar() {
-  const insumo = document.getElementById('insumo').value;
-  const quantidade = document.getElementById('quantidade').value;
-  const data = document.getElementById('data').value;
-
-  const checkboxes = document.querySelectorAll('#postos input:checked');
-  const postosSelecionados = Array.from(checkboxes).map(cb => cb.value);
-
-  if (!insumo || !quantidade || !data || postosSelecionados.length === 0) {
-    alert('Preencha tudo');
-    return;
-  }
-
-  const registros = postosSelecionados.map(posto => ({
-    insumo,
-    quantidade,
-    posto,
-    data
-  }));
-
-  const url = "https://sheetdb.io/api/v1/vinx1o8k4zxoi";
-
-  try {
-    await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ data: registros })
-    });
-
-    alert('Salvo!');
-
-    document.getElementById('insumo').value = '';
-    document.getElementById('quantidade').value = '';
-    document.getElementById('data').value = '';
-    document.querySelectorAll('#postos input').forEach(cb => cb.checked = false);
-
-    await carregarDados();
-
-  } catch (erro) {
-    console.error('Erro:', erro);
-  }
+function scrollParaCima() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-carregarDados();
 </script>
+
+       
+
+<!-- Botões de scroll com ícones de coração -->
+<button id="btnDescer" class="botao-scroll" onclick="scrollParaBaixo()">💗</button>
+<button id="btnSubir" class="botao-scroll" onclick="scrollParaCima()">💖</button>
 
 </body>
 </html>
